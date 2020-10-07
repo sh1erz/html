@@ -47,17 +47,21 @@
 	align-items: center;
 	background: #848484;
 	min-height: 20%;
+	width: 100%;
 }
 
 .u1,.l1,.u2,.l2{
-	background: #844444;
-	width: 12%;
+	min-width: 12%;
 	height: 20%;
 	text-align: center;
 	margin: 1%;
+}
+.u1,.l1{
+	background: #844444;
 }
 
 body{
 	margin: 0;
 	height: 200%;
 }
+
