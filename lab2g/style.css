@@ -7,7 +7,7 @@ body{
 	"horizont horizont tall"
 	"footer footer footer";
 	margin:0;
-	grid-template-rows: minmax(300px, 40%) 80% 40% minmax(300px, 40%);
+	grid-template-rows: minmax(300px, 40%) 50% 20% minmax(300px, 40%);
   	grid-template-columns: minmax(230px, 20%)  minmax(400px, 60%) minmax(140px,20%);
   	margin: 0;
 }
@@ -35,7 +35,7 @@ body{
 	grid-area: tall;
 	background: #FA5858;
 	padding: 10px;
-	text-align: center;
+	text-align: right;
 }
 
 .horizontal{
