@@ -40,13 +40,13 @@
 				var side3 = form.s3.value;
 				if (side1 + side2 > side3 && side3 + side2 > side1 && side1 + side3 > side2) {
 					var message = "Triangle does exist";
-					alert(message);
+					alert(message + "tr1");
 					setCookie("tr1", message);
 
 				}
 				else{
 					var message = "Triangle does not exist";
-					alert(message);
+					alert(message + "tr1");
 					setCookie("tr1", message);
 				}
 			}
@@ -54,7 +54,9 @@
 	</head>
 	<body>
 		<script type="text/javascript">	//окно про куки треугольника
+			alert("awdqawfcqwfQWFweafS");
 			if (getCookie("tr1") == undefined) {
+				alert("undef");
 				return true;
 			}
 			else{recurs("");}
