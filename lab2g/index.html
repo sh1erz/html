@@ -1,14 +1,68 @@
 <!DOCTIPE html>
 <html lang='ru'>
 	<head>
+		</script>
 		<meta charset="UTF-8">
 		<title>Main page</title>
 		<link rel="stylesheet" href="style.css">
+		<script type="text/javascript">
+			function setCookie(name, value){
+				document.cookie = name + "=" + encodeURIComponent(value);
+				alert(document.cookie);
+				alert("adasdad");
+			}
+			function getCookie(name){
+				var results = document.cookie.match ( '(^|;) ?' + name + '=([^;]*)(;|$)' );				 
+				if ( results ){
+					return true;
+				}
+				else{
+					return undefined;
+				}
+			}
+			function deleteCookie(name) {
+				setCookie(name, "", {
+					'max-age': -1
+				});
+			}
+			function recurs(rel){
+				if(confirm("Удалить куки?" + rel)){
+					deleteCookie("tr1");
+					location.reload();
+				}
+				else{
+					recurs("  Нужно перезагрузить страницу");
+				}
+			}
+			function trfunc(form) {			
+				var side1 = form.s1.value;
+				var side2 = form.s2.value;
+				var side3 = form.s3.value;
+				if (side1 + side2 > side3 && side3 + side2 > side1 && side1 + side3 > side2) {
+					var message = "Треугольник можно построить";
+					alert(message);
+					setCookie("tr1", message);
+
+				}
+				else{
+					var message = "Треугольника не существует";
+					alert(message);
+					setCookie("tr1", message);
+				}
+			}
+		</script>
 	</head>
 	<body>
+		<script type="text/javascript">	//окно про куки треугольника
+			if (getCookie("tr1") == undefined) {
+				return true;
+			}
+			else{recurs("");}
+		</script>
+
 		<div class="header">
 			<div class="u1"><h3>Сайт</h3></div>
-			<div class="u2"><h3>text</h3></div>
+			<div class="u2"><h3>text1</h3></div>
 		</div> 
 		<div class="menu">
 			<p><a href="index.html"><h2>Меню:</h2></a></p>
@@ -24,14 +78,20 @@
 		</div>
 		<div class="center">
 			<div class="img"><img class= "img" src="image1.jpg" alt="киев" height="300" width="400"></div>
-			<p>Таким образом, дальнейшее развитие различных форм деятельности влечет за собой процесс внедрения и модернизации форм воздействия. Дорогие друзья, выбранный нами инновационный путь позволяет выполнить важнейшие задания по разработке системы обучения кадров, соответствующей насущным потребностям. Разнообразный и богатый опыт повышение уровня гражданского сознания влечет за собой процесс внедрения и модернизации модели развития.</p>	
-			<p>Равным образом выбранный нами инновационный путь обеспечивает актуальность соответствующих условий активизации.</p>
-
-			<p>Практический опыт показывает, что повышение уровня гражданского сознания создаёт предпосылки качественно новых шагов для экономической целесообразности принимаемых решений. Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности требует от нас системного анализа всесторонне сбалансированных нововведений.</p>
-
-			<p>Таким образом, постоянный количественный рост и сфера нашей активности играет важную роль в формировании направлений прогрессивного развития. Таким образом, начало повседневной работы по формированию позиции требует определения и уточнения системы обучения кадров, соответствующей насущным потребностям.</p>
-
-			<p>Задача организации, в особенности же постоянный количественный рост и сфера нашей активности обеспечивает широкому кругу специалистов участие в формировании...</p>	
+			
+			<form name="triangle" onsubmit="trfunc(this)">
+				<input type="text" name="s1" placeholder="сторона 1" id="s1"></input>
+				<input type="text" name="s2" placeholder="сторона 2" id="s2"></input>
+				<input type="text" name="s3" placeholder="сторона 3" id="s3"></input>
+				<br><input type="submit" name="subm"></input></br>
+			</form>
+			
+			<script type="text/javascript">		//romb
+			var d1 = 12;
+			var d2 = 5;
+			var S = (d1 * d2) / 2;
+			document.write("d1 = " + d1 + "  d2 = " + d2 + 'Площадь ромба: ' + S);
+			</script>			
 		</div>
 		<div class="tall">
 			<p>Не следует, однако, забывать о том, что консультация с профессионалами из IT напрямую зависит от системы масштабного изменения ряда параметров. Разнообразный и богатый опыт начало повседневной работы по формированию позиции играет важную роль в формировании системы масштабного изменения ряда параметров. Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности способствует подготовке и реализации форм воздействия. Не следует, однако, забывать о том, что дальнейшее развитие различных форм деятельности позволяет выполнить важнейшие задания по разработке экономической целесообразности принимаемых решений. Таким образом, повышение уровня гражданского сознания требует определения и уточнения соответствующих условий активизации.</p>
@@ -48,8 +108,16 @@
 		</div>
 		<div class="footer">
 			<div class="l1"><h3>company.com</h3></div>
-			<div class="l2"><h3>text</h3></div>
+			<div class="l2"><h3>text2</h3></div>
 		</div>
-				
+		<script type="text/javascript"> //1
+			var elem1 = document.getElementsByClassName('u2');
+			var elem2 = document.getElementsByClassName('l2');
+			var elem = elem1[0].innerHTML;
+			elem1[0].innerHTML = elem2[0].innerHTML;
+			elem2[0].innerHTML = elem;
+		</script>
+
+
 	</body>
 </html>
