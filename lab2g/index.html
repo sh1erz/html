@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="style.css">
 		<script type="text/javascript">
 			function setCookie(name, value){
-				document.cookie = name + "=" + encodeURIComponent(value);
+				document.cookie = encodeURIComponent(name) + '=' + encodeURIComponent(value);
 				alert(document.cookie);
 				alert("adasdad");
 			}
