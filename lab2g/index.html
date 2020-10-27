@@ -39,15 +39,15 @@
 				var side2 = form.s2.value;
 				var side3 = form.s3.value;
 				if (side1 + side2 > side3 && side3 + side2 > side1 && side1 + side3 > side2) {
-					var message = "Треугольник можно построить";
+					var message = "Triangle does exist";
 					alert(message);
 					setCookie("tr1", message);
 
 				}
 				else{
-					var message = "Треугольника не существует";
+					var message = "Triangle does not exist";
 					alert(message);
-					setCookie("tr1 1", message);
+					setCookie("tr1", message);
 				}
 			}
 		</script>
