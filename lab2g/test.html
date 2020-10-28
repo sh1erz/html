@@ -17,6 +17,31 @@
 				}
 			}
 
+			function getCookie(name){
+				var results = document.cookie.match ( '(^|;) ?' + name + '=([^;]*)(;|$)' );				 
+				if ( results ){
+					alert("getCookie   true");
+					return true;
+				}
+				else{
+					alert("getCookie   undef");
+					return undefined;
+				}	
+			}
+
+			function setCookie(name, value){   //после трфунк
+				document.cookie = name + '=' + encodeURIComponent(value);
+				alert(document.cookie);
+				alert("setCookie");
+			}
+
+			function deleteCookie(name) {
+				setCookie(name, "", {
+				'max-age': -1
+				});
+				alert("delete cookie");
+			}	
+
 			function trfunc(form) {			//после формы
 				var side1 = form.s1.value;
 				var side2 = form.s2.value;
@@ -56,30 +81,6 @@
 				alert("pered nim vypolnilsya");
 			</script>
 			<script type="text/javascript">	//окно про куки треугольника!!!!!!
-
-				function getCookie(name){
-					var results = document.cookie.match ( '(^|;) ?' + name + '=([^;]*)(;|$)' );				 
-					if ( results ){
-						alert("getCookie   true");
-						return true;
-					}
-					else{
-						alert("getCookie   undef");
-						return undefined;
-					}
-				}
-
-				function setCookie(name, value){   //после трфунк
-					document.cookie = name + '=' + encodeURIComponent(value);
-					alert(document.cookie);
-					alert("setCookie");
-				}
-
-				function deleteCookie(name) {
-					setCookie(name, "", {
-						'max-age': -1
-					});
-				}
 
 				alert("начальный алерт");
 				if (getCookie("tr1") == undefined) {
