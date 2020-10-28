@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="style.css">
 		<script type="text/javascript">
 			function recurs(rel){
-				if(confirm(document.cookie + "<p>Удалить куки?</p>" + rel)){
+				if(confirm(document.cookie + "  Удалить куки?" + rel)){
 					deleteCookie("tr1");
 					location.reload();
 				}
@@ -28,7 +28,7 @@
 			}
 		</script>
 		<script type="text/javascript">
-			function setCookie(name, value, options = {}) { // Пример использования: setCookie('user', 'John', {secure: true, 'max-age': 3600});
+			function setCookie(name, value, options = {}) { 
 
 				options = {path: '/',...options};
 
