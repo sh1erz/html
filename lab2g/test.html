@@ -108,7 +108,31 @@
 			
 		</div>
 		<div class="tall">
-			tall
+			<div class="cursive">
+				<p>Не следует, однако, забывать о том, что консультация с профессионалами из IT напрямую зависит от системы масштабного изменения ряда параметров. Разнообразный и богатый опыт начало повседневной работы по формированию позиции играет важную роль в формировании системы масштабного изменения ряда параметров. Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности способствует подготовке и реализации форм воздействия. Не следует, однако, забывать о том, что дальнейшее развитие различных форм деятельности позволяет выполнить важнейшие задания по разработке экономической целесообразности принимаемых решений. Таким образом, повышение уровня гражданского сознания требует определения и уточнения соответствующих условий активизации.</p>
+				<p>С другой стороны курс на социально-ориентированный национальный проект играет важную роль в формировании позиций, занимаемых участниками в отношении поставленных задач?</p>
+			</div>
+			<script type="text/javascript">		//курсив
+				tallText = document.getElementsByClassName('cursive');
+				if (localStorage.getItem('ital') == '1') {
+					tallText[0].innerHTML = tallText[0].innerHTML.italics();
+				}
+				function italics() {
+				    var rad=document.getElementsByName('r1');
+				    if (rad[2].checked) {
+				    	tallText[0].innerHTML = tallText[0].innerHTML.italics();
+				    	localStorage.setItem('ital', 1);
+				    }
+				    else{
+				    	localStorage.ital = 0;
+				    }
+				    
+				}
+			</script>
+			<input type="radio" name="r1" value="5">нет<br>
+			<input type="radio" name="r1" value="13">нет<br>
+			<input type="radio" name="r1" value="53">курсив<br>
+			<button onclick="italics()">Ok</button>
 		</div>
 		<div class="horizontal">
 			horizont
