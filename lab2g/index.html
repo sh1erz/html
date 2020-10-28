@@ -6,6 +6,7 @@
 		<title>Main page</title>
 		<link rel="stylesheet" href="style.css">
 		<script type="text/javascript">
+
 			function recurs(rel){
 				if(confirm("Удалить куки?" + rel)){
 					deleteCookie("tr1");
@@ -53,7 +54,6 @@
 				'max-age': -1
 				});
 				alert("delete cookie");
-				alert(document.cookie);
 			}	
 
 			function trfunc(form) {			//после формы
@@ -62,26 +62,18 @@
 				var side3 = form.s3.value;
 				if (side1 + side2 > side3 && side3 + side2 > side1 && side1 + side3 > side2) {
 					var message = "Triangle does exist";
-					alert(message + "tr1");
+					alert(message);
 					setCookie("tr1", message);
 				}
 				else{
 					var message = "Triangle does not exist";
-					alert(message + "tr1");
+					alert(message);
 					setCookie("tr1", message);
 				}
 			}
 		</script>
 	</head>
 	<body>
-		<script type="text/javascript">	//окно про куки треугольника
-			if (getCookie("tr1") == undefined) {
-				alert("undef");
-				return true;
-			}
-			else{recurs("");}
-		</script>
-
 		<div class="header">
 			<div class="u1"><h3>Сайт</h3></div>
 			<div class="u2"><h3>text1</h3></div>
@@ -100,6 +92,13 @@
 		</div>
 		<div class="center">
 			<div class="img"><img class= "img" src="image1.jpg" alt="киев" height="300" width="400"></div>
+
+			<script type="text/javascript">	//окно про куки треугольника!!!!!!
+				if (getCookie("tr1") == undefined) {
+				}
+				else{recurs("");}
+			</script>
+
 			<form name="triangle" onsubmit="trfunc(this)">												
 				<input type="text" name="s1" placeholder="сторона 1" id="s1"></input>
 				<input type="text" name="s2" placeholder="сторона 2" id="s2"></input>
