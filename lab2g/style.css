@@ -14,7 +14,14 @@ body{
 
 .header{
 	grid-area: header;
+	display: grid;	
+	
+	
+		align-content: center;
 	background: #848484;
+}
+.form1,.form6{
+	grid-area: header2;
 }
 
 .menu{
@@ -52,7 +59,10 @@ body{
 .header,.footer{
 	display: grid;	
 	grid-template-areas: 
-	"leftb . rightb";
+	". . ."
+	"leftb . rightb"
+	". . header2";
+	grid-template-rows: 33% 34% 33%;
 	grid-template-columns: 15% 70% 15%; 
 	align-content: center;
 }
@@ -69,4 +79,5 @@ body{
 	margin: 7%;
 	text-align: center;
 }
+
 

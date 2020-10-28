@@ -83,8 +83,14 @@
 	<body>
 		<div class="header">
 			<div class="u1"><h3>Сайт</h3></div>
-			<div class="u2"><h3>text1</h3></div>
-		</div> 
+			<div class="u2"><h3>text1</h3></div>		
+			<div class="form1" id="form1">
+				<form>
+					<input type="text" name="div1" size="10" maxlength="15" value="1"></input>
+					<input type="submit" name="sub1" value="Удалить" />
+				</form>		
+			</div>
+		</div> 	
 		<div class="menu">
 			<p><a href="index.html"><h2>Меню:</h2></a></p>
 			<img src="menu.png" usemap="#Menu">
@@ -96,10 +102,15 @@
 				<area shape="rect" coords="0,180,220,240" href="page 5.html" alt="стр 5">
 				</map>
 			</p>
+			<div id="form2">
+				<form>
+					<input type="text" name="div2" size="10" maxlength="15" value="2"></input>
+					<input type="submit" name="sub2" value="Удалить" />
+				</form>	
+			</div>
 		</div>
 		<div class="center">
 			<div class="img"><img class= "img" src="image1.jpg" alt="киев" height="300" width="400"></div>
-			
 
 			<form name="triangle" onsubmit="trfunc(this)">												
 				<input type="text" name="s1" placeholder="сторона 1" id="s1"></input>
@@ -113,7 +124,13 @@
 			var d2 = 5;
 			var S = (d1 * d2) / 2;
 			document.write("d1 = " + d1 + "  d2 = " + d2 + 'Площадь ромба: ' + S);
-			</script>			
+			</script>		
+			<div id="form3">
+				<form>
+					<input type="text" name="div3" size="10" maxlength="15" value="3"></input>
+					<input type="submit" name="sub3" value="Удалить" />
+				</form>	
+			</div>	
 		</div>
 		<div class="tall">
 			<div class="cursive">
@@ -141,25 +158,44 @@
 			<input type="radio" name="r1" value="13">нет<br>
 			<input type="radio" name="r1" value="53">курсив<br>
 			<button onclick="italics()">Ok</button>
+			<div id="form4">
+				<form>
+					<input type="text" name="div4" size="10" maxlength="15" value="4"></input>
+					<input type="submit" name="sub4" value="Удалить" />
+				</form>	
+			</div>
 		</div>
-		<div class="horizontal" id="horizontal" onmouseenter="mouseBefore()" onmouseleave="mouseAfter()">
+		<div class="horizontal" onmouseenter="mouseBefore()" onmouseleave="mouseAfter()">
 			<p>Повседневная практика показывает, что постоянное информационно-техническое обеспечение нашей деятельности в значительной степени обуславливает создание дальнейших направлений развития проекта. С другой стороны дальнейшее развитие различных форм деятельности напрямую зависит от позиций, занимаемых участниками в отношении поставленных задач. Задача организации, в особенности же постоянное информационно-техническое обеспечение нашей деятельности играет важную роль в...</p>
-			<p id="prev">Не следует, однако, забывать о том, что курс на социально-ориентированный национальный проект создаёт предпосылки качественно новых шагов для существующих финансовых и административных условий?</p>
+			<p>Не следует, однако, забывать о том, что курс на социально-ориентированный национальный проект создаёт предпосылки качественно новых шагов для существующих финансовых и административных условий?</p>
+			<div id="form5">
+				<form>
+					<input type="text" name="div5" size="10" maxlength="15" value="5"></input>
+					<input type="submit" name="sub5" value="Удалить" />
+				</form>	
+			</div>
 
 			<script type="text/javascript"> //mouseenter
 				function mouseBefore(){	
 					var d = new Date();
 					textNode = document.createTextNode("Вы навели сюда мышь в " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds());
-					prev.after(textNode);
+					form5.after(textNode);
 				}
 				function mouseAfter(){
 					textNode.remove();
 				}
 			</script>
+			
 		</div>
 		<div class="footer">
 			<div class="l1"><h3>company.com</h3></div>
 			<div class="l2"><h3>text2</h3></div>
+			<div class="form6">
+				<form>
+					<input type="text" name="div6" size="10" maxlength="15" value="6"></input>
+					<input type="submit" name="sub6" value="Удалить" />
+				</form>	
+			</div>
 		</div>
 		<script type="text/javascript"> //1
 			var elem1 = document.getElementsByClassName('u2');
@@ -168,7 +204,13 @@
 			elem1[0].innerHTML = elem2[0].innerHTML;
 			elem2[0].innerHTML = elem;
 		</script>
-
-
+		<script type="text/javascript">
+			var div1 = document.createElement('div');
+			var div2 = document.createElement('div');
+			var div3 = document.createElement('div');
+			var div4 = document.createElement('div');
+			var div5 = document.createElement('div');
+			var div6 = document.createElement('div');
+		</script>
 	</body>
 </html>
