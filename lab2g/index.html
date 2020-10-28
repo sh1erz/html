@@ -16,7 +16,8 @@
 					recurs("  Нужно перезагрузить страницу");
 				}
 			}
-
+		</script>
+		<script type="text/javascript">
 			function getCookie(name){
 				var results = document.cookie.match ( '(^|;) ?' + name + '=([^;]*)(;|$)' );				 
 				if ( results ){
@@ -28,7 +29,8 @@
 					return undefined;
 				}	
 			}
-
+		</script>
+		<script type="text/javascript">
 			function setCookie(name, value, options = {}) { // Пример использования: setCookie('user', 'John', {secure: true, 'max-age': 3600});
 
 				options = {path: '/',...options};
@@ -48,14 +50,17 @@
 				}
   				document.cookie = updatedCookie;
 			}
-
+		</script>
+		<script type="text/javascript">
 			function deleteCookie(name) {
 				setCookie(name, "", {
 				'max-age': -1
 				});
 				alert("delete cookie");
 			}	
-
+		</script>
+			
+		<script type="text/javascript">
 			function trfunc(form) {			//после формы
 				var side1 = form.s1.value;
 				var side2 = form.s2.value;
@@ -71,7 +76,7 @@
 					setCookie("tr1", message);
 				}
 			}
-		</script>
+		</script>		
 	</head>
 	<body>
 		<div class="header">
