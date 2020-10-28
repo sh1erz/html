@@ -85,15 +85,22 @@
 			<div class="u1"><h3>Сайт</h3></div>
 			<div class="u2"><h3>text1</h3></div>	
 			<div class="form1">
-				<input type="text" id="div1" name="div1" size="10" maxlength="15" value="1"></input>
-				<input type="submit" onclick="localStorage.removeItem('div1');div1.value=''" name="sub1" value="Удалить" />
+				<input type="text" id="div1" name="div1" size="10" maxlength="15"></input>
+				<input type="submit" onclick="returnto1()" name="sub1" value="Удалить" />
 			</div>
 
 			<script type="text/javascript">
 				div1.value = localStorage.getItem('div1');
 			    div1.oninput = () => {
 			      localStorage.setItem('div1', div1.value)
+			      if (div1.value == '') {
+			      	localStorage.div1 = '1';
+			      }
 			    };
+			    function returnto1(){
+					localStorage.div1 = 1;
+					div1.value='1';
+				}
 			</script>
 		</div> 	
 		<div class="menu">
@@ -109,25 +116,32 @@
 			</p>
 			<div class="form2">
 				<input type="text" id="div2" name="div2" size="10" maxlength="15" value="2"></input>
-				<input type="submit" onclick="localStorage.removeItem('div2');div2.value=''" value="Удалить" />
+				<input type="submit" onclick="returnto2()" value="Удалить" />
 			</div>
 
 			<script type="text/javascript">
 				div2.value = localStorage.getItem('div2');
 			    div2.oninput = () => {
 			      localStorage.setItem('div2', div2.value)
+			      if (div1.value == '') {
+			      	localStorage.div2 = '2';
+			      }
 			    };
+			    function returnto2(){
+					localStorage.div2 = 2;
+					div2.value='2';
+				}
 			</script>
 
 		</div>
 		<div class="center">
 			<div class="img"><img class= "img" src="image1.jpg" alt="киев" height="300" width="400"></div>
 
-			<form name="triangle" onsubmit="trfunc(this)">												
+			<form name="triangle" onsubmit="trfunc(this)">										
 				<input type="text" name="s1" placeholder="сторона 1" id="s1"></input>
 				<input type="text" name="s2" placeholder="сторона 2" id="s2"></input>
 				<input type="text" name="s3" placeholder="сторона 3" id="s3"></input>
-				<br><input type="submit" name="subm"></input></br>
+				<br><input type="submit" name="subm"></input>
 			</form>			
 			<script type="text/javascript">		//romb
 			var d1 = 12;
@@ -138,14 +152,21 @@
 
 			<div class="form3">
 				<input type="text" id="div3" name="div3" size="10" maxlength="15" value="3"></input>
-				<input type="submit" onclick="localStorage.removeItem('div3');div3.value=''" name="sub3" value="Удалить" />
+				<input type="submit" onclick="returnto3()" name="sub3" value="Удалить" />
 			</div>
 
 			<script type="text/javascript">
 				div3.value = localStorage.getItem('div3');
 			    div3.oninput = () => {
-			      localStorage.setItem('div3', div1.value)
+			      localStorage.setItem('div3', div3.value)
+			    	if (div3.value == '') {
+			      		localStorage.div3 = '3';
+			      	}
 			    };
+			    function returnto3(){
+					localStorage.div3 = 3;
+					div3.value='3';
+				}
 			</script>
 		</div>
 		<div class="tall">
@@ -176,14 +197,21 @@
 			<button onclick="italics()">Ok</button>
 			<div class="form4">		
 				<br><input type="text" id="div4" size="10" maxlength="15" value="4"></input>
-				<input type="submit" onclick="localStorage.removeItem('div4');div4.value=''" value="Удалить" />
+				<input type="submit" onclick="returnto4()" value="Удалить" />
 			</div>
 
 			<script type="text/javascript">
 				div4.value = localStorage.getItem('div4');
 			    div4.oninput = () => {
 			      localStorage.setItem('div4', div4.value)
+			      if (div4.value == '') {
+			      	  localStorage.div4 = '4';
+			        }
 			    };
+			    function returnto4(){
+					localStorage.div4 = 4;
+					div4.value='4';
+				}
 			</script>
 		</div>
 		<div class="horizontal" onmouseenter="mouseBefore()" onmouseleave="mouseAfter()">
@@ -191,14 +219,21 @@
 			<p>Не следует, однако, забывать о том, что курс на социально-ориентированный национальный проект создаёт предпосылки качественно новых шагов для существующих финансовых и административных условий?</p>
 			<div class="form5" id="form5">
 				<input type="text" id="div5" size="10" maxlength="15" value="5"></input>
-				<input type="submit" onclick="localStorage.removeItem('div5');div5.value=''"value="Удалить" />
+				<input type="submit" onclick="returnto5()"value="Удалить" />
 			</div>
 
 			<script type="text/javascript">
 				div5.value = localStorage.getItem('div5');
 			    div5.oninput = () => {
 			      localStorage.setItem('div5', div5.value)
+			      if (div5.value == '') {
+			      	localStorage.div5 = '5';
+			      }
 			    };
+			    function returnto5(){
+					localStorage.div5 = 5;
+					div5.value='5';
+				}
 			</script>
 
 			<script type="text/javascript"> //mouseenter
@@ -218,14 +253,21 @@
 			<div class="l2"><h3>text2</h3></div>
 			<div class="form6">
 				<input type="text" id="div6" size="10" maxlength="15" value="6"></input>
-				<input type="submit" onclick="localStorage.removeItem('div6');div6.value=''"value="Удалить" />
+				<input type="submit" onclick="returnto6()"value="Удалить" />
 			</div>
 
 			<script type="text/javascript">
 				div6.value = localStorage.getItem('div6');
 			    div6.oninput = () => {
 			      localStorage.setItem('div6', div6.value)
+			      if (div6.value == '') {
+			      	localStorage.div6 = '6';
+			      }
 			    };
+			    function returnto6(){
+					localStorage.div6 = 6;
+					div6.value='6';
+				}
 			</script>
 		</div>
 		<script type="text/javascript"> //1
