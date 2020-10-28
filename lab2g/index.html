@@ -115,7 +115,7 @@
 				</map>
 			</p>
 			<div class="form2">
-				<input type="text" id="div2" name="div2" size="10" maxlength="15" value="2"></input>
+				<input type="text" id="div2" size="10" maxlength="15" value="2"></input>
 				<input type="submit" onclick="returnto2()" value="Удалить" />
 			</div>
 
@@ -123,7 +123,7 @@
 				div2.value = localStorage.getItem('div2');
 			    div2.oninput = () => {
 			      localStorage.setItem('div2', div2.value)
-			      if (div1.value == '') {
+			      if (div2.value == '') {
 			      	localStorage.div2 = '2';
 			      }
 			    };
@@ -137,7 +137,7 @@
 		<div class="center">
 			<div class="img"><img class= "img" src="image1.jpg" alt="киев" height="300" width="400"></div>
 
-			<form name="triangle" onsubmit="trfunc(this)">										
+			<form name="triangle" onsubmit="trfunc(this);">										
 				<input type="text" name="s1" placeholder="сторона 1" id="s1"></input>
 				<input type="text" name="s2" placeholder="сторона 2" id="s2"></input>
 				<input type="text" name="s3" placeholder="сторона 3" id="s3"></input>
