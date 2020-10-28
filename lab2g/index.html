@@ -6,7 +6,6 @@
 		<title>Main page</title>
 		<link rel="stylesheet" href="style.css">
 		<script type="text/javascript">
-
 			function recurs(rel){
 				if(confirm("Удалить куки?" + rel)){
 					deleteCookie("tr1");
@@ -79,6 +78,15 @@
 		</script>		
 	</head>
 	<body>
+		<script type="text/javascript">
+			alert("pterd gavnom");
+		</script>
+		<script type="text/javascript">	//окно про куки треугольника!!!!!!
+			alert("fwefwef");
+			if (getCookie("tr1") == undefined) {
+			}
+			else{recurs("");}
+		</script>
 		<div class="header">
 			<div class="u1"><h3>Сайт</h3></div>
 			<div class="u2"><h3>text1</h3></div>
@@ -97,12 +105,7 @@
 		</div>
 		<div class="center">
 			<div class="img"><img class= "img" src="image1.jpg" alt="киев" height="300" width="400"></div>
-
-			<script type="text/javascript">	//окно про куки треугольника!!!!!!
-				if (getCookie("tr1") == undefined) {
-				}
-				else{recurs("");}
-			</script>
+			
 
 			<form name="triangle" onsubmit="trfunc(this)">												
 				<input type="text" name="s1" placeholder="сторона 1" id="s1"></input>
