@@ -6,25 +6,6 @@
 		<title>Main page</title>
 		<link rel="stylesheet" href="style.css">
 		<script type="text/javascript">
-			function setCookie(name, value){
-				document.cookie = name + '=' + encodeURIComponent(value);
-				alert(document.cookie);
-				alert("adasdad");
-			}
-			function getCookie(name){
-				var results = document.cookie.match ( '(^|;) ?' + name + '=([^;]*)(;|$)' );				 
-				if ( results ){
-					return true;
-				}
-				else{
-					return undefined;
-				}
-			}
-			function deleteCookie(name) {
-				setCookie(name, "", {
-					'max-age': -1
-				});
-			}
 			function recurs(rel){
 				if(confirm("Удалить куки?" + rel)){
 					deleteCookie("tr1");
@@ -34,7 +15,48 @@
 					recurs("  Нужно перезагрузить страницу");
 				}
 			}
-			function trfunc(form) {			
+
+			function getCookie(name){
+				var results = document.cookie.match ( '(^|;) ?' + name + '=([^;]*)(;|$)' );				 
+				if ( results ){
+					alert("getCookie   true");
+					return true;
+				}
+				else{
+					alert("getCookie   undef");
+					return undefined;
+				}	
+			}
+
+			function setCookie(name, value, options = {}) { // Пример использования: setCookie('user', 'John', {secure: true, 'max-age': 3600});
+
+				options = {path: '/',...options};
+
+				if (options.expires instanceof Date) {
+					options.expires = options.expires.toUTCString();
+				}
+
+				let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+				for (let optionKey in options) {
+					updatedCookie += "; " + optionKey;
+				    let optionValue = options[optionKey];
+				    if (optionValue !== true) {
+				      updatedCookie += "=" + optionValue;
+				    }
+				}
+  				document.cookie = updatedCookie;
+			}
+
+			function deleteCookie(name) {
+				setCookie(name, "", {
+				'max-age': -1
+				});
+				alert("delete cookie");
+				alert(document.cookie);
+			}	
+
+			function trfunc(form) {			//после формы
 				var side1 = form.s1.value;
 				var side2 = form.s2.value;
 				var side3 = form.s3.value;
@@ -53,7 +75,6 @@
 	</head>
 	<body>
 		<script type="text/javascript">	//окно про куки треугольника
-			alert("awdqawfcqwfQWFweafS");
 			if (getCookie("tr1") == undefined) {
 				alert("undef");
 				return true;
