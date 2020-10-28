@@ -83,13 +83,18 @@
 	<body>
 		<div class="header">
 			<div class="u1"><h3>Сайт</h3></div>
-			<div class="u2"><h3>text1</h3></div>		
-			<div class="form1" id="form1">
-				<form>
-					<input type="text" name="div1" size="10" maxlength="15" value="1"></input>
-					<input type="submit" name="sub1" value="Удалить" />
-				</form>		
+			<div class="u2"><h3>text1</h3></div>	
+			<div class="form1">
+				<input type="text" id="div1" name="div1" size="10" maxlength="15" value="1"></input>
+				<input type="submit" onclick="localStorage.removeItem('div1');div1.value=''" name="sub1" value="Удалить" />
 			</div>
+
+			<script type="text/javascript">
+				div1.value = localStorage.getItem('div1');
+			    div1.oninput = () => {
+			      localStorage.setItem('div1', div1.value)
+			    };
+			</script>
 		</div> 	
 		<div class="menu">
 			<p><a href="index.html"><h2>Меню:</h2></a></p>
@@ -102,12 +107,18 @@
 				<area shape="rect" coords="0,180,220,240" href="page 5.html" alt="стр 5">
 				</map>
 			</p>
-			<div id="form2">
-				<form>
-					<input type="text" name="div2" size="10" maxlength="15" value="2"></input>
-					<input type="submit" name="sub2" value="Удалить" />
-				</form>	
+			<div class="form2">
+				<input type="text" id="div2" name="div2" size="10" maxlength="15" value="2"></input>
+				<input type="submit" onclick="localStorage.removeItem('div2');div2.value=''" value="Удалить" />
 			</div>
+
+			<script type="text/javascript">
+				div2.value = localStorage.getItem('div2');
+			    div2.oninput = () => {
+			      localStorage.setItem('div2', div2.value)
+			    };
+			</script>
+
 		</div>
 		<div class="center">
 			<div class="img"><img class= "img" src="image1.jpg" alt="киев" height="300" width="400"></div>
@@ -117,20 +128,25 @@
 				<input type="text" name="s2" placeholder="сторона 2" id="s2"></input>
 				<input type="text" name="s3" placeholder="сторона 3" id="s3"></input>
 				<br><input type="submit" name="subm"></input></br>
-			</form>
-			
+			</form>			
 			<script type="text/javascript">		//romb
 			var d1 = 12;
 			var d2 = 5;
 			var S = (d1 * d2) / 2;
 			document.write("d1 = " + d1 + "  d2 = " + d2 + 'Площадь ромба: ' + S);
 			</script>		
-			<div id="form3">
-				<form>
-					<input type="text" name="div3" size="10" maxlength="15" value="3"></input>
-					<input type="submit" name="sub3" value="Удалить" />
-				</form>	
-			</div>	
+
+			<div class="form3">
+				<input type="text" id="div3" name="div3" size="10" maxlength="15" value="3"></input>
+				<input type="submit" onclick="localStorage.removeItem('div3');div3.value=''" name="sub3" value="Удалить" />
+			</div>
+
+			<script type="text/javascript">
+				div3.value = localStorage.getItem('div3');
+			    div3.oninput = () => {
+			      localStorage.setItem('div3', div1.value)
+			    };
+			</script>
 		</div>
 		<div class="tall">
 			<div class="cursive">
@@ -158,22 +174,32 @@
 			<input type="radio" name="r1" value="13">нет<br>
 			<input type="radio" name="r1" value="53">курсив<br>
 			<button onclick="italics()">Ok</button>
-			<div id="form4">
-				<form>
-					<input type="text" name="div4" size="10" maxlength="15" value="4"></input>
-					<input type="submit" name="sub4" value="Удалить" />
-				</form>	
+			<div class="form4">		
+				<br><input type="text" id="div4" size="10" maxlength="15" value="4"></input>
+				<input type="submit" onclick="localStorage.removeItem('div4');div4.value=''" value="Удалить" />
 			</div>
+
+			<script type="text/javascript">
+				div4.value = localStorage.getItem('div4');
+			    div4.oninput = () => {
+			      localStorage.setItem('div4', div4.value)
+			    };
+			</script>
 		</div>
 		<div class="horizontal" onmouseenter="mouseBefore()" onmouseleave="mouseAfter()">
 			<p>Повседневная практика показывает, что постоянное информационно-техническое обеспечение нашей деятельности в значительной степени обуславливает создание дальнейших направлений развития проекта. С другой стороны дальнейшее развитие различных форм деятельности напрямую зависит от позиций, занимаемых участниками в отношении поставленных задач. Задача организации, в особенности же постоянное информационно-техническое обеспечение нашей деятельности играет важную роль в...</p>
 			<p>Не следует, однако, забывать о том, что курс на социально-ориентированный национальный проект создаёт предпосылки качественно новых шагов для существующих финансовых и административных условий?</p>
-			<div id="form5">
-				<form>
-					<input type="text" name="div5" size="10" maxlength="15" value="5"></input>
-					<input type="submit" name="sub5" value="Удалить" />
-				</form>	
+			<div class="form5" id="form5">
+				<input type="text" id="div5" size="10" maxlength="15" value="5"></input>
+				<input type="submit" onclick="localStorage.removeItem('div5');div5.value=''"value="Удалить" />
 			</div>
+
+			<script type="text/javascript">
+				div5.value = localStorage.getItem('div5');
+			    div5.oninput = () => {
+			      localStorage.setItem('div5', div5.value)
+			    };
+			</script>
 
 			<script type="text/javascript"> //mouseenter
 				function mouseBefore(){	
@@ -191,11 +217,16 @@
 			<div class="l1"><h3>company.com</h3></div>
 			<div class="l2"><h3>text2</h3></div>
 			<div class="form6">
-				<form>
-					<input type="text" name="div6" size="10" maxlength="15" value="6"></input>
-					<input type="submit" name="sub6" value="Удалить" />
-				</form>	
+				<input type="text" id="div6" size="10" maxlength="15" value="6"></input>
+				<input type="submit" onclick="localStorage.removeItem('div6');div6.value=''"value="Удалить" />
 			</div>
+
+			<script type="text/javascript">
+				div6.value = localStorage.getItem('div6');
+			    div6.oninput = () => {
+			      localStorage.setItem('div6', div6.value)
+			    };
+			</script>
 		</div>
 		<script type="text/javascript"> //1
 			var elem1 = document.getElementsByClassName('u2');
@@ -203,14 +234,6 @@
 			var elem = elem1[0].innerHTML;
 			elem1[0].innerHTML = elem2[0].innerHTML;
 			elem2[0].innerHTML = elem;
-		</script>
-		<script type="text/javascript">
-			var div1 = document.createElement('div');
-			var div2 = document.createElement('div');
-			var div3 = document.createElement('div');
-			var div4 = document.createElement('div');
-			var div5 = document.createElement('div');
-			var div6 = document.createElement('div');
 		</script>
 	</body>
 </html>

@@ -20,11 +20,9 @@
 			function getCookie(name){
 				var results = document.cookie.match ( '(^|;) ?' + name + '=([^;]*)(;|$)' );				 
 				if ( results ){
-					alert("getCookie   true");
 					return true;
 				}
 				else{
-					alert("getCookie   undef");
 					return undefined;
 				}	
 			}
@@ -54,7 +52,6 @@
 				'max-age': -1
 				});
 				alert("delete cookie");
-				alert(document.cookie);
 			}	
 
 			function trfunc(form) {			//после формы
@@ -78,6 +75,19 @@
 		<div class="header">
 			<div class="u1" id="u1id"><h3>Сайт</h3></div>
 			<div class="u2"><h3>text1</h3></div>
+
+			<div class="form1" id="form1">
+				<input type="text" id="div1" name="div1" size="10" maxlength="15" value="1"></input>
+				<input type="submit" onclick="localStorage.removeItem('div1');div1.value=''" name="sub1" value="Удалить" />
+			</div>
+
+			<script type="text/javascript">
+				div1.value = localStorage.getItem('div1');
+			    div1.oninput = () => {
+			      localStorage.setItem('div1', div1.value)
+			    };
+			</script>
+
 		</div> 
 		<div class="menu">
 			<p><a href="index.html"><h2>Меню:</h2></a></p>
@@ -94,7 +104,6 @@
 		<div class="center">
 			<script type="text/javascript">	//окно про куки треугольника!!!!!!
 				if (getCookie("tr1") == undefined) {
-					alert("undef");
 				}
 				else{recurs("");}
 			</script>
