@@ -4,7 +4,57 @@
 		<meta charset="UTF-8">
 		<title>Main page</title>
 		<link rel="stylesheet" href="style.css">
+		<script type="text/javascript">
+			function setCookie(name, value){   //после трфунк
+				document.cookie = name + '=' + encodeURIComponent(value);
+				alert(document.cookie);
+				alert("setCookie");
+			}
 
+			function getCookie(name){
+				var results = document.cookie.match ( '(^|;) ?' + name + '=([^;]*)(;|$)' );				 
+				if ( results ){
+					alert("getCookie   true");
+					return true;
+				}
+				else{
+					alert("getCookie   undef");
+					return undefined;
+				}
+			}
+
+			function deleteCookie(name) {
+				setCookie(name, "", {
+					'max-age': -1
+				});
+			}
+
+			function recurs(rel){
+				if(confirm("Удалить куки?" + rel)){
+					deleteCookie("tr1");
+					location.reload();
+				}
+				else{
+					recurs("  Нужно перезагрузить страницу");
+				}
+			}
+
+			function trfunc(form) {			//после формы
+				var side1 = form.s1.value;
+				var side2 = form.s2.value;
+				var side3 = form.s3.value;
+				if (side1 + side2 > side3 && side3 + side2 > side1 && side1 + side3 > side2) {
+					var message = "Triangle does exist";
+					alert(message + "tr1");
+					setCookie("tr1", message);
+				}
+				else{
+					var message = "Triangle does not exist";
+					alert(message + "tr1");
+					setCookie("tr1", message);
+				}
+			}
+		</script>
 	</head>
 	<body>
 		<div class="header">
@@ -24,15 +74,21 @@
 			</p>
 		</div>
 		<div class="center">
-			<div class="img"><img class= "img" src="image1.jpg" alt="киев" height="300" width="400"></div>	
-			<script type="text/javascript">
-				let name = "my name";
-				let value = "Basil Kvasil";
-				document.cookie = encodeURIComponent(name) + '=' + encodeURIComponent(value);
-				alert(document.cookie);
-				alert("adasdad");
-
+			<script type="text/javascript">	//окно про куки треугольника!!!!!!
+				alert("начальный алерт");
+				if (getCookie("tr1") == undefined) {
+					alert("undef");
+					return true;
+				}
+				else{recurs("");}
 			</script>
+			<div class="img"><img class= "img" src="image1.jpg" alt="киев" height="300" width="400"></div>	
+			<form name="triangle" onsubmit="trfunc(this)"> 
+				<input type="text" name="s1" placeholder="сторона 1" id="s1"></input>
+				<input type="text" name="s2" placeholder="сторона 2" id="s2"></input>
+				<input type="text" name="s3" placeholder="сторона 3" id="s3"></input>
+				<br><input type="submit" name="subm"></input></br>
+			</form>
 			
 		</div>
 		<div class="tall">

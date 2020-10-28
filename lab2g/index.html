@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="style.css">
 		<script type="text/javascript">
 			function setCookie(name, value){
-				document.cookie = encodeURIComponent(name) + '=' + encodeURIComponent(value);
+				document.cookie = name + '=' + encodeURIComponent(value);
 				alert(document.cookie);
 				alert("adasdad");
 			}
@@ -42,7 +42,6 @@
 					var message = "Triangle does exist";
 					alert(message + "tr1");
 					setCookie("tr1", message);
-
 				}
 				else{
 					var message = "Triangle does not exist";
@@ -80,8 +79,7 @@
 		</div>
 		<div class="center">
 			<div class="img"><img class= "img" src="image1.jpg" alt="киев" height="300" width="400"></div>
-			
-			<form name="triangle" onsubmit="trfunc(this)">
+			<form name="triangle" onsubmit="trfunc(this)">												
 				<input type="text" name="s1" placeholder="сторона 1" id="s1"></input>
 				<input type="text" name="s2" placeholder="сторона 2" id="s2"></input>
 				<input type="text" name="s3" placeholder="сторона 3" id="s3"></input>
