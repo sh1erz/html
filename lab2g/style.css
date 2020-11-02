@@ -60,7 +60,7 @@ body{
 	display: grid;	
 	grid-template-areas: 
 	". . ."
-	"leftb . rightb"
+	"leftb textblock rightb"
 	". . header2";
 	grid-template-rows: 33% 34% 33%;
 	grid-template-columns: 15% 70% 15%; 
@@ -71,6 +71,12 @@ body{
 	grid-area: leftb;
 	background: #844444;
 	margin: 7%;
+	text-align: center;
+}
+.uu,.ll{
+	grid-area: textblock;
+	background: #a9a9a9;
+	margin: 11.363;
 	text-align: center;
 }
 
