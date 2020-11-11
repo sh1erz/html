@@ -107,6 +107,7 @@
 			</div>
 
 			<script type="text/javascript">
+				inp2.value = localStorage.getItem('div2p');
 				div2.innerHTML = localStorage.getItem('div2');
 			    inp2.oninput = () => {
 			      localStorage.setItem('div2', inp2.value)
@@ -183,7 +184,8 @@
 			</div>
 
 			<script type="text/javascript">
-				div4.innerHTML = localStorage.getItem('div4');
+				inp4.value = localStorage.getItem('div4p');
+				div4.innerHTML = localStorage.getItem('div4p');
 			    inp4.oninput = () => {
 			        localStorage.setItem('div4', inp4.value);
 			        div4.innerHTML = inp4.value;
@@ -216,6 +218,7 @@
 			</div>
 
 			<script type="text/javascript">
+				inp5.value = localStorage.getItem('div5p');
 				div5.innerHTML = localStorage.getItem('div5');
 			    inp5.oninput = () => {
 			        localStorage.setItem('div5', inp5.value);
@@ -242,6 +245,7 @@
 			</div>
 
 			<script type="text/javascript">
+				inp1.value = localStorage.getItem('uup');
 				uu.innerHTML = localStorage.getItem('uu');
 			    inp6.oninput = () => {
 			      localStorage.setItem('uu', inp6.value)
@@ -257,6 +261,7 @@
 				}
 			</script>
 			<script type="text/javascript">
+				inp1.value = localStorage.getItem('llp');
 				ll.innerHTML = localStorage.getItem('ll');
 			    inp1.oninput = () => {
 			      localStorage.setItem('ll', inp1.value)
@@ -289,6 +294,7 @@
 		</script>
 
 		<script type="text/javascript">
+			inp3.value = localStorage.getItem('div3p');
 			div3.innerHTML = localStorage.getItem('div3');
 			inp3.oninput = () => {
 			    localStorage.setItem('div3', inp3.value);
