@@ -15,9 +15,7 @@ body{
 .header{
 	grid-area: header;
 	display: grid;	
-	
-	
-		align-content: center;
+	align-content: center;
 	background: #848484;
 }
 .form1,.form6{
