@@ -6,7 +6,7 @@ function changeColor16(){
 		document.getElementsByClassName("l2")[0].style.backgroundColor = "cyan";
 	}, 5000);
 	let colorf = true;
-	leha = setInterval(function() {
+	interv = setInterval(function() {
 		if(colorf){
 			document.getElementsByClassName("tall")[0].style.color = "cyan";
 			colorf = false;
@@ -20,5 +20,5 @@ function changeColor16(){
 
 function stopChange4(){
 	document.getElementsByClassName("tall")[0].style.color = "black";
-	clearInterval(leha);
+	clearInterval(interv);
 }
