@@ -1,4 +1,4 @@
-//subm.addEventListener('click', gitGet);
+subm.addEventListener('click', gitGet);
 
 async function gitGet(){
 	let user = document.getElementById('user').value;
@@ -23,4 +23,4 @@ async function gitGet(){
 	  alert("Ошибка HTTP: " + response.status);
 	}
 }
-gitGet();
+//gitGet();
