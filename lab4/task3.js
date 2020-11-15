@@ -10,7 +10,7 @@ async function gitGet(){
 	  // получаем тело ответа (см. про этот метод ниже)
 	  let commits = await response.json();
 	  for (let i = 0; i < commits.length; i++) {
-	  	gitTextarea.innerHTML = ' ' + commits[i].autor.login + '\t'
+	  	gitTextarea.innerHTML = commits[i].author.login + '\t'
 	  	commits[i].commits[i].commit.message + '\n';
 		
 	  }
