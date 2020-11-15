@@ -9,11 +9,11 @@ async function gitGet(){
 	if (response.ok) { // если HTTP-статус в диапазоне 200-299
 	  // получаем тело ответа (см. про этот метод ниже)
 	  let commits = await response.json();
+	  let output;
 	  for (let i = 0; i < commits.length; i++) {
-	  	gitTextarea.innerHTML = commits[i].commit.author.name + ': ' + 
-	  	commits[i].commit.message + '\n';
-		
+	  	output = commits[i].commit.author.name + ': ' + commits[i].commit.message + '\n';
 	  }
+	  gitTextarea.innerHTML = output;
 	}
 	 else {
 	 	let error = document.createElement('div');
