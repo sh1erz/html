@@ -1,13 +1,37 @@
 //subm.addEventListener('click', gitGet);
+$(function() {
+    $(".button").click(function() {
+      // validate and process form here
+        $('.error').hide();
+  	    let user = $("input#user").val();
+  		if (user == "") {
+	        $("label#user_error").show();
+	        $("input#user").focus();
+	        return false;
+      	}
+  		let repos = $("input#repos").val();
+  		if (repos == "") {
+	        $("label#repos_error").show();
+	        $("input#repos").focus();
+	        return false;
+      	}
+      	let dataString = 'user='+ user + '&repos=' + repos;
+  		//alert (dataString);return false;
+      	$.ajax({
+      		type: "POST",
+		    url: "bin/process.php",
+		    data: dataString,
+		    success: function() {
+		   		gitGet(user, repos);
+		    }
+		});
+		return false;
+    });
+});
 
-async function gitGet(){
-	/*let user = document.getElementById('user').value;
-	let repos = document.getElementById('repos').value;*/
-	let user = 'sh1erz';
-	let repos = 'sh1erz.github.io';
+async function gitGet(user, repos){
 	let response = await fetch("https://api.github.com/repos/" + user + '/' + repos + "/commits");
-	if (response.ok) { // если HTTP-статус в диапазоне 200-299
-	  // получаем тело ответа (см. про этот метод ниже)
+	if (response.ok) { 
 	  let commits = await response.json();
 	  let output;
 	  for (let i = 0; i < commits.length; i++) {

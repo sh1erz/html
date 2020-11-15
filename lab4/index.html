@@ -3,9 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Main page</title>
-		<link rel="stylesheet" href="style.css">
-		
-		 
+		<link rel="stylesheet" href="style.css">		 
 	</head>
 	<body>
 		<div class="header">
@@ -24,9 +22,18 @@
 				</map>
 			</p>
 			<form>
+				<fieldset>
+					<label for="user" id="user_label">Username</label>
+				    <input type="text" name="user" id="user" size="30" value="" class="text-input" />
+				    <label class="error" for="user" id="user_error">Имя не написано</label>
+
+				    <label for="repos" id="repos_label">Username</label>
+				    <input type="text" name="repos" id="repos" size="30" value="" class="text-input" />
+				    <label class="error" for="repos" id="repos_error">Репозиторий не написан</label>
+				</fieldset>
 				<input type="textarea" id="user" size="15" ></input>
 				<input type="textarea" id="repos" size="15" ></input>
-				<input type="submit" id="subm" value="Send" />
+				<input type="submit" id="button" class="button" value="Send" />
 			</form>
 			<textarea id="gitTextarea" cols="20" rows="5"></textarea>	
 		</div>
