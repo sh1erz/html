@@ -36,7 +36,7 @@ async function gitGet(user, repos){
 	  let commits = await response.json();
 	  let output;
 	  for (let i = 0; i < commits.length; i++) {
-	  	output = commits[i].commit.author.name + ': ' + commits[i].commit.message + '\n';
+	  	output += commits[i].commit.author.name + ': ' + commits[i].commit.message + '\n';
 	  }
 	  gitTextarea.innerHTML = output;
 	}
