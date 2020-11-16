@@ -15,16 +15,17 @@ $(function() {
 	        $("input#repos").focus();
 	        return false;
       	}
-      	let dataString = 'user='+ user + '&repos=' + repos;
+      	/*let dataString = 'user='+ user + '&repos=' + repos;
   		//alert (dataString);return false;
       	$.ajax({
-      		type: "POST",
-		    url: "bin/process.php",
+      		//type: "POST",
+		    //url: "bin/process.php",
 		    data: dataString,
 		    success: function() {
 		   		gitGet(user, repos);
 		    }
-		});
+		});*/
+		gitGet(user, repos);
 		return false;
     });
 });
