@@ -1,8 +1,8 @@
 //subm.addEventListener('click', gitGet);
 $(function() {
+	$('.error').hide();
     $(".button").click(function() {
       // validate and process form here
-        $('.error').hide();
   	    let user = $("input#user").val();
   		if (user == "") {
 	        $("label#user_error").show();
@@ -41,7 +41,7 @@ async function gitGet(user, repos){
 	}
 	 else {
 	 	let error = document.createElement('div');
-	 	div.style.backgroundColor = "red";
+	 	error.style.backgroundColor = "red";
 	 	error.innerHTML = "Error:" + response.status;
 	 	gitTextarea.after()
 	  alert("Ошибка HTTP: " + response.status);
