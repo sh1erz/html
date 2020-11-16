@@ -47,4 +47,3 @@ async function gitGet(user, repos){
 	  alert("Ошибка HTTP: " + response.status);
 	}
 }
-gitGet();
