@@ -31,7 +31,7 @@ async function gitGet(user, repos){
 	 else {
 	 	let errordiv = document.createElement('div');
 	 	errordiv.style.backgroundColor = "red";
-	 	errordiv.innerHTML = "Error:" + response.status;
+	 	errordiv.innerHTML = "Error:" + response.statusText;
 	 	fieldset3.after(errordiv);
 	  	alert("Ошибка HTTP: " + response.status);
 	}
