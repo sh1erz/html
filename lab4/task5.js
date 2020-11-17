@@ -6,19 +6,19 @@ form5.onsubmit = function(){
 	let numsArr = [];
 	for (var i = 0; i < inputArr.length; i++) {
 		if (inputArr[i].match(/\d/g) != null) {
-			if (inputArr[i][0] != "-" && ((inputArr[i].match(/\d/g).length + 1) == inputArr[i].length)||
+			if (inputArr[i][0] == "-" && ((inputArr[i].match(/\d/g).length + 1) == inputArr[i].length)||
 			 inputArr[i].match(/\d/g).length == inputArr[i].length) { 
 				//если минус первый и длинна с ним == дл цифры 
 			// или длина цифр == дл цифры
 				numsArr.push(Number(inputArr[i]));
 			}
 			else{
-				inputArr[i].splice(i, 1);
+				inputArr.splice(i, 1);
 				i--;
 			}
 		}
 		else{
-			inputArr[i].splice(i, 1);
+			inputArr.splice(i, 1);
 			i--;
 		}
 	}
