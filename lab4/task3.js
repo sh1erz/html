@@ -29,10 +29,10 @@ async function gitGet(user, repos){
 	  gitTextarea.innerHTML = output;
 	}
 	 else {
-	 	let error = document.createElement('div');
-	 	error.style.backgroundColor = "red";
-	 	error.innerHTML = "Error:" + response.status;
-	 	gitTextarea.after()
-	  alert("Ошибка HTTP: " + response.status);
+	 	let errordiv = document.createElement('div');
+	 	errordiv.style.backgroundColor = "red";
+	 	errordiv.innerHTML = "Error:" + response.status;
+	 	fieldset3.after();
+	  	alert("Ошибка HTTP: " + response.status);
 	}
 }
