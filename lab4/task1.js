@@ -20,7 +20,7 @@ function ChangeCont(){
 		    clearInterval(timer);
 		}
 		i++;
-	}, 1000);
+	}, 5000);
 }
 	
 

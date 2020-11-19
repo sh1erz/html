@@ -1,3 +1,5 @@
+formGit.addEventListener("submit", Clear);
+
 $(function() {
 	$('.error').hide();
     $(".button").click(function() {
@@ -18,6 +20,9 @@ $(function() {
     });
 });
 
+
+
+
 async function gitGet(user, repos){
 	let response = await fetch("https://api.github.com/repos/" + user + '/' + repos + "/commits");
 	if (response.ok) { 
@@ -29,9 +34,15 @@ async function gitGet(user, repos){
 	  gitTextarea.innerHTML = output;
 	}
 	 else {
-	 	let errordiv = document.createElement('div');
+	 	errordiv = document.createElement('div');
 	 	errordiv.style.backgroundColor = "red";
 	 	errordiv.innerHTML = "Error:" + response.statusText;
 	 	fieldset3.after(errordiv);
 	}
+}
+
+function Clear(){
+	errordiv.innerHTML = "";
+	errordiv.hidden = true;
+	gitTextarea.innerHTML = "";
 }
