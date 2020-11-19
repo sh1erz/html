@@ -1,4 +1,5 @@
-formGit.addEventListener("submit", Clear);
+let form3 = document.getElementById("formGit");
+form3.addEventListener("submit", Clear);
 
 $(function() {
 	$('.error').hide();
