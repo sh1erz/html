@@ -1,5 +1,7 @@
 let form3 = document.getElementById("formGit");
-form3.addEventListener("submit", Clear);
+form3.addEventListener("submit", function(){
+	gitTextarea.innerHTML = "";
+});
 
 $(function() {
 	$('.error').hide();
@@ -39,11 +41,10 @@ async function gitGet(user, repos){
 	 	errordiv.style.backgroundColor = "red";
 	 	errordiv.innerHTML = "Error:" + response.statusText;
 	 	fieldset3.after(errordiv);
+	 	let tim = setTimeout(function(){
+	 		errordiv.innerHTML = "";
+	 		errordiv.hidden = true;
+	 	}, 2000);
 	}
 }
 
-function Clear(){
-	errordiv.innerHTML = "";
-	errordiv.hidden = true;
-	gitTextarea.innerHTML = "";
-}
