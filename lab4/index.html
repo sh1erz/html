@@ -31,10 +31,15 @@
 				    <label for="repos" id="repos_label">Репозиторий</label>
 				    <input type="text" name="repos" id="repos" size="30" value="" class="text-input" />
 				    <label class="error" for="repos" id="repos_error">Репозиторий не написан</label>
-				    <input type="submit" name="submit" class="button" id="submit_btn" value="Send" />
+				    <input type="submit" name="submit" class="button" id="submit_btn" onclick="ClearG()" value="Send" />
 				</fieldset>
 			</form>
 			<textarea id="gitTextarea" cols="20" rows="5"></textarea>	
+			<script type="text/javascript">
+				function ClearG(){
+					gitTextarea.innerHTML = "";
+				}
+			</script>
 		</div>
 		<div class="center">
 			<div class="img"><img class= "img0" src="image1.jpg" alt="киев"></div>

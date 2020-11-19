@@ -1,8 +1,3 @@
-let form3 = document.getElementById("formGit");
-form3.addEventListener("submit", function(){
-	gitTextarea.innerHTML = "";
-});
-
 $(function() {
 	$('.error').hide();
     $(".button").click(function() {
@@ -44,7 +39,7 @@ async function gitGet(user, repos){
 	 	let tim = setTimeout(function(){
 	 		errordiv.innerHTML = "";
 	 		errordiv.hidden = true;
-	 	}, 2000);
+	 	}, 1000);
 	}
 }
 
