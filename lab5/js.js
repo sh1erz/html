@@ -33,7 +33,7 @@ function HideDiv(id){
 	anim.append(redSq);
 	anim.append(greenSq);
 	timerg = setInterval(green, 3);	
-	timerr = setInterval(red, 20);
+	timerr = setInterval(red, 4);
 
 	/*requestAnimationFrame(red);
 	requestAnimationFrame(green);*/
@@ -45,7 +45,7 @@ let step = 0.5;
 let rstep = 1;
 function red(){
 	rpos += rstep;
-	if (rpos == (anim.offsetHeight - 25) || rpos == 0) {
+	if (rpos == (anim.offsetHeight - 20) || rpos == 0) {
 	    rstep = - rstep;
 	}	
 	redSq.style.marginTop = rpos + 'px';	
@@ -53,7 +53,7 @@ function red(){
 
 function green(){	
 	gpos += step;		
-	if (gpos == (anim.offsetWidth - 25) || gpos == 0) {
+	if (gpos == (anim.offsetWidth - 30) || gpos == 0) {
 	    step = - step;
 	} 	    
 	greenSq.style.marginLeft = gpos + 'px';
