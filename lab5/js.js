@@ -71,7 +71,7 @@ function HideDiv(id){
 	controls.append(startB);
 	controls.append(textNode);
 	let date = new Date();
-	localStorage.test += "; work closed " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+	localStorage.messages += "; work closed " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
 }
 
 function StartAnim(){
@@ -124,11 +124,12 @@ function ShowDiv(id){
 function toTextNode(message){
 	textNode.innerHTML = " " + message;
 	let date = new Date();
-	localStorage.test += ";" + message + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+	localStorage.messages += ";" + message + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
 }
 
 function ShowLocal(){
-	let arr = localStorage.getItem(messages).split(";");
+	let str = localStorage.getItem(messages);
+	let arr = str.split(";");
 	for (var i = 0; i < arr.length; i++) {
 		Notifications.innerHTML += arr[i] + "\n";
 	}
