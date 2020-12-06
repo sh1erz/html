@@ -31,6 +31,7 @@ body{
 
 .controls{
 	height: 50px;
+	text-align: left;
 }
 
 .anim{
@@ -41,6 +42,7 @@ body{
 	background-image: url("fon.png");
 	position: relative;
 }
+
 
 .header{
 	grid-area: header;

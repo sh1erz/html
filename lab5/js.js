@@ -1,29 +1,65 @@
-centerBegining = document.getElementById('center').innerHTML;
+localStorage.setItem('messages', "");
+let centerBegining = document.getElementById('center').innerHTML;
 let flag = true;
+let timerg;
+let timerr;
+let rpos = 0;
+let gpos = 0;	
+let step = 1;
+let rstep = 1;
+
+let textNode = document.createElement('i');
+
 buttonPlay.addEventListener("click", function(){
 	if(flag){
 		flag = false;
 		HideDiv('center');
+		toTextNode("button play is pressed");
 	}
 });
 
-controls = document.createElement('div');
+let controls = document.createElement('div');
 controls.className = "controls";
 anim = document.createElement('div');
 anim.className = "anim";
 
-startB = document.createElement('button');
-startB.innerHTML = "Start";
-stopB = document.createElement('button');
-stopB.innerHTML = "Stop";
-reloadB = document.createElement('button');
-reloadB.innerHTML = "reload";
+let stopB = document.createElement("input");
+stopB.type = "button";
+stopB.value = "Stop";
+stopB.addEventListener("click", function(){
+	clearInterval(timerg);
+	clearInterval(timerr);
+	controls.replaceChild(startB, stopB);
+	toTextNode("button stop is pressed");
+});
 
-redSq = document.createElement('div');
+let reloadB = document.createElement("input");
+reloadB.type = "button";
+reloadB.value = "Reload";
+reloadB.addEventListener("click", function(){
+	greenSq.style.marginLeft = '0px';
+	redSq.style.marginTop = '0px';
+	controls.replaceChild(startB, reloadB);
+	rpos = 0;
+	gpos = 0;	
+	step = 1;
+	rstep = 1;
+	toTextNode("button reload is pressed");
+})
+
+let redSq = document.createElement('div');
 redSq.className = "redSq";
 greenSq = document.createElement('div');
 greenSq.className = "greenSq";
 
+let startB = document.createElement("input");
+startB.type = "button";
+startB.value = "Start";
+startB.addEventListener("click", StartAnim);
+startB.addEventListener("click", function(){
+	controls.replaceChild(stopB, startB);
+	toTextNode("button start is pressed");
+});
 
 function HideDiv(id){
 	document.getElementById("center").style.padding = "0px";
@@ -32,21 +68,35 @@ function HideDiv(id){
 	center.append(anim);
 	anim.append(redSq);
 	anim.append(greenSq);
-	timerg = setInterval(green, 3);	
-	timerr = setInterval(red, 4);
-
-	/*requestAnimationFrame(red);
-	requestAnimationFrame(green);*/
-
+	controls.append(startB);
+	controls.append(textNode);
+	let date = new Date();
+	localStorage.test += "; work closed " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
 }
-let rpos = 0;
-let gpos = 0;	
-let step = 0.5;
-let rstep = 1;
+
+function StartAnim(){
+	timerg = setInterval(green, 5);	
+	timerr = setInterval(red, 3);
+}
+
+
 function red(){
 	rpos += rstep;
+	let Rcoords = redSq.getBoundingClientRect();
+	let Gcoords = greenSq.getBoundingClientRect();
+	if(Rcoords.left >= Gcoords.left && Rcoords.left <= Gcoords.right &&
+		Rcoords.top <= Gcoords.bottom && Rcoords.top >= Gcoords.top &&
+		Rcoords.right >= Gcoords.left && Rcoords.left <= Gcoords.right &&
+		Rcoords.bottom <= Gcoords.bottom && Rcoords.bottom >= Gcoords.top){
+		clearInterval(timerg);
+		clearInterval(timerr);
+		controls.replaceChild(reloadB, stopB);
+		toTextNode("squares crossed");
+	}
+
 	if (rpos == (anim.offsetHeight - 20) || rpos == 0) {
 	    rstep = - rstep;
+	    toTextNode("red square touched the wall");
 	}	
 	redSq.style.marginTop = rpos + 'px';	
 }
@@ -55,27 +105,23 @@ function green(){
 	gpos += step;		
 	if (gpos == (anim.offsetWidth - 30) || gpos == 0) {
 	    step = - step;
+	    toTextNode("green square touched the wall");
 	} 	    
 	greenSq.style.marginLeft = gpos + 'px';
 }
 
-function frame(){
-	gpos += step;
-	rpos += rstep;	
-	if (gpos == (anim.offsetWidth - 25) || gpos == 0) {
-	    step = - step;
-	} 	
-	if (rpos == (anim.offsetHeight - 25) || rpos == 0) {
-	    rstep = - rstep;
-	}
-	greenSq.style.marginLeft = gpos + 'px';
-	redSq.style.marginTop = rpos + 'px';
-	requestAnimationFrame(frame);	
-}
 function ShowDiv(id){
-	id.style.padding = "10px";
-	//learInterval(timer);
+	document.getElementById(id).style.padding = "10px";
+	clearInterval(timerg);
+	clearInterval(timerr);
 	flag = true;
 	document.getElementById(id).innerHTML = centerBegining;
+	toTextNode("button cancel is pressed");
+}
+
+function toTextNode(message){
+	textNode.innerHTML = " " + message;
+	let date = new Date();
+	localStorage.test += ";" + message + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
 }
 
