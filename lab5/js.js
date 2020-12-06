@@ -131,7 +131,7 @@ function ShowLocal(){
 	let str = localStorage.getItem('messages');
 	let arr = str.split(";");
 	for (var i = 0; i < arr.length; i++) {
-		Notifications.innerHTML += arr[i] + "\n";
+		document.getElementById("Notifications").innerHTML += arr[i] + "\n";
 	}
 }
 
