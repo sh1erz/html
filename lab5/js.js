@@ -117,11 +117,20 @@ function ShowDiv(id){
 	flag = true;
 	document.getElementById(id).innerHTML = centerBegining;
 	toTextNode("button cancel is pressed");
+	ShowLocal();
+
 }
 
 function toTextNode(message){
 	textNode.innerHTML = " " + message;
 	let date = new Date();
 	localStorage.test += ";" + message + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+}
+
+function ShowLocal(){
+	let arr = localStorage.split(";");
+	for (var i = 0; i < arr.length; i++) {
+		Notifications.innerHTML += arr[i] + "\n";
+	}
 }
 
