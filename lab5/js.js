@@ -128,7 +128,7 @@ function toTextNode(message){
 }
 
 function ShowLocal(){
-	let arr = localStorage.split(";");
+	let arr = localStorage.getItem(messages).split(";");
 	for (var i = 0; i < arr.length; i++) {
 		Notifications.innerHTML += arr[i] + "\n";
 	}
