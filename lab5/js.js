@@ -86,7 +86,7 @@ function red(){
 	let Gcoords = greenSq.getBoundingClientRect();
 	if(Rcoords.left >= Gcoords.left && Rcoords.left <= Gcoords.right &&
 		Rcoords.top <= Gcoords.bottom && Rcoords.top >= Gcoords.top &&
-		Rcoords.right >= Gcoords.left && Rcoords.left <= Gcoords.right &&
+		Rcoords.right >= Gcoords.left && Rcoords.right <= Gcoords.right &&
 		Rcoords.bottom <= Gcoords.bottom && Rcoords.bottom >= Gcoords.top){
 		clearInterval(timerg);
 		clearInterval(timerr);

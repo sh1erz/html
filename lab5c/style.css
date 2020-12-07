@@ -1,0 +1,95 @@
+body{
+
+	display: grid;
+	grid-template-areas: 
+	"header header header"
+	"menu article tall"
+	"horizont horizont tall"
+	"footer footer footer";
+	margin:0;
+	grid-template-rows: minmax(300px, 40%) 50% 20% minmax(300px, 40%);
+  	grid-template-columns: minmax(250px, 20%)  minmax(400px, 60%) minmax(140px,20%);
+  	margin: 0;
+}
+.canvas{
+	height: 100%;
+}
+
+.anim{
+	height: calc(100% - 10px);
+	margin-left: 5px;
+	margin-right: 5px;
+	border: 5px solid red;
+	background-image: url("fon.png");
+	
+}
+
+
+.header{
+	grid-area: header;
+	display: grid;	
+	align-content: center;
+	background: #848484;
+}
+.form1,.form6{
+	grid-area: header2;
+}
+
+.menu{
+	grid-area: menu;
+	background: #00BFFF;
+	min-width: 230px;
+	padding: 10px;
+}
+
+.center{
+	grid-area: article;
+	background: #0B3861;
+	text-align: right;
+	padding: 10px;
+}
+
+.tall{
+	grid-area: tall;
+	background: #FA5858;
+	padding: 10px;
+	text-align: right;
+}
+
+.horizontal{
+	grid-area: horizont;
+	background: #0B3B0B;
+	padding: 10px;
+}
+
+.footer{
+	grid-area: footer;
+	background: #848484;
+}
+
+.header,.footer{
+	display: grid;	
+	grid-template-areas: 
+	". . ."
+	"leftb . rightb"
+	". . header2";
+	grid-template-rows: 33% 34% 33%;
+	grid-template-columns: 15% 70% 15%; 
+	align-content: center;
+}
+
+.u1,.l1{
+	grid-area: leftb;
+	background: #844444;
+	margin: 7%;
+	text-align: center;
+}
+
+
+.u2,.l2{
+	grid-area: rightb;
+	margin: 7%;
+	text-align: center;
+}
+
+
