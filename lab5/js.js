@@ -1,8 +1,7 @@
 localStorage.setItem('messages', "");
 let centerBegining = document.getElementById('center').innerHTML;
 let flag = true;
-let timerg;
-let timerr;
+let timer;
 let rpos = 0;
 let gpos = 0;	
 let step = 1;
@@ -27,8 +26,8 @@ let stopB = document.createElement("input");
 stopB.type = "button";
 stopB.value = "Stop";
 stopB.addEventListener("click", function(){
-	clearInterval(timerg);
-	clearInterval(timerr);
+	clearInterval(timer);
+	//clearInterval(timerr);
 	controls.replaceChild(startB, stopB);
 	toTextNode("button stop is pressed");
 });
@@ -75,12 +74,37 @@ function HideDiv(id){
 }
 
 function StartAnim(){
-	timerg = setInterval(green, 5);	
-	timerr = setInterval(red, 3);
+	timer = setInterval(RedGreen, 6);	
+
 }
 
+function RedGreen(){
+	rpos += 3*rstep;
+	gpos += 1.8*step;
+	let Rcoords = redSq.getBoundingClientRect();
+	let Gcoords = greenSq.getBoundingClientRect();
+	if(Rcoords.left >= Gcoords.left && Rcoords.left <= Gcoords.right &&
+		Rcoords.top <= Gcoords.bottom && Rcoords.top >= Gcoords.top &&
+		Rcoords.right >= Gcoords.left && Rcoords.right <= Gcoords.right &&
+		Rcoords.bottom <= Gcoords.bottom && Rcoords.bottom >= Gcoords.top){
+		clearInterval(timer);
+		//clearInterval(timerr);
+		controls.replaceChild(reloadB, stopB);
+		toTextNode("squares crossed");
+	}	
+	if (rpos >= (anim.offsetHeight - 20) || rpos <= 0) {
+	    rstep = - rstep;
+	    toTextNode("red square touched the wall");
+	}	
+	if (gpos >= (anim.offsetWidth - 30) || gpos <= 0) {
+	    step = - step;
+	    toTextNode("green square touched the wall");
+	} 	    
+	redSq.style.marginTop = rpos + 'px';	
+	greenSq.style.marginLeft = gpos + 'px';
 
-function red(){
+}
+/*function red(){
 	rpos += rstep;
 	let Rcoords = redSq.getBoundingClientRect();
 	let Gcoords = greenSq.getBoundingClientRect();
@@ -94,7 +118,7 @@ function red(){
 		toTextNode("squares crossed");
 	}
 
-	if (rpos == (anim.offsetHeight - 20) || rpos == 0) {
+	if (rpos >= (anim.offsetHeight - 20) || rpos <= 0) {
 	    rstep = - rstep;
 	    toTextNode("red square touched the wall");
 	}	
@@ -103,17 +127,17 @@ function red(){
 
 function green(){	
 	gpos += step;		
-	if (gpos == (anim.offsetWidth - 30) || gpos == 0) {
+	if (gpos >= (anim.offsetWidth - 30) || gpos <= 0) {
 	    step = - step;
 	    toTextNode("green square touched the wall");
 	} 	    
 	greenSq.style.marginLeft = gpos + 'px';
-}
+}*/
 
 function ShowDiv(id){
 	document.getElementById(id).style.padding = "10px";
-	clearInterval(timerg);
-	clearInterval(timerr);
+	clearInterval(timer);
+	//clearInterval(timerr);
 	flag = true;
 	document.getElementById(id).innerHTML = centerBegining;
 	toTextNode("button cancel is pressed");
