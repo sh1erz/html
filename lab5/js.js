@@ -70,7 +70,7 @@ function HideDiv(id){
 	controls.append(startB);
 	controls.append(textNode);
 	let date = new Date();
-	localStorage.messages += "; work closed " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+	localStorage.messages += ";work closed " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
 }
 
 function StartAnim(){
