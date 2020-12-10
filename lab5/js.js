@@ -27,7 +27,6 @@ stopB.type = "button";
 stopB.value = "Stop";
 stopB.addEventListener("click", function(){
 	clearInterval(timer);
-	//clearInterval(timerr);
 	controls.replaceChild(startB, stopB);
 	toTextNode("button stop is pressed");
 });
@@ -70,7 +69,7 @@ function HideDiv(id){
 	controls.append(startB);
 	controls.append(textNode);
 	let date = new Date();
-	localStorage.messages += ";work closed " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+	//localStorage.messages += ";work closed " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
 }
 
 function StartAnim(){
@@ -88,7 +87,6 @@ function RedGreen(){
 		Rcoords.right >= Gcoords.left && Rcoords.right <= Gcoords.right &&
 		Rcoords.bottom <= Gcoords.bottom && Rcoords.bottom >= Gcoords.top){
 		clearInterval(timer);
-		//clearInterval(timerr);
 		controls.replaceChild(reloadB, stopB);
 		toTextNode("squares crossed");
 	}	
@@ -104,40 +102,10 @@ function RedGreen(){
 	greenSq.style.marginLeft = gpos + 'px';
 
 }
-/*function red(){
-	rpos += rstep;
-	let Rcoords = redSq.getBoundingClientRect();
-	let Gcoords = greenSq.getBoundingClientRect();
-	if(Rcoords.left >= Gcoords.left && Rcoords.left <= Gcoords.right &&
-		Rcoords.top <= Gcoords.bottom && Rcoords.top >= Gcoords.top &&
-		Rcoords.right >= Gcoords.left && Rcoords.right <= Gcoords.right &&
-		Rcoords.bottom <= Gcoords.bottom && Rcoords.bottom >= Gcoords.top){
-		clearInterval(timerg);
-		clearInterval(timerr);
-		controls.replaceChild(reloadB, stopB);
-		toTextNode("squares crossed");
-	}
-
-	if (rpos >= (anim.offsetHeight - 20) || rpos <= 0) {
-	    rstep = - rstep;
-	    toTextNode("red square touched the wall");
-	}	
-	redSq.style.marginTop = rpos + 'px';	
-}
-
-function green(){	
-	gpos += step;		
-	if (gpos >= (anim.offsetWidth - 30) || gpos <= 0) {
-	    step = - step;
-	    toTextNode("green square touched the wall");
-	} 	    
-	greenSq.style.marginLeft = gpos + 'px';
-}*/
 
 function ShowDiv(id){
 	document.getElementById(id).style.padding = "10px";
 	clearInterval(timer);
-	//clearInterval(timerr);
 	flag = true;
 	document.getElementById(id).innerHTML = centerBegining;
 	toTextNode("button cancel is pressed");

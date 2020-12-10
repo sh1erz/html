@@ -33,7 +33,7 @@ function HideDiv(id){
 	anim.append(canvas);
 	ctx = canvas.getContext("2d");
 	let date = new Date();
-	localStorage.messages += ";work closed " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+	//localStorage.messages += ";work closed " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
 
 }
 
@@ -70,18 +70,18 @@ function drawSquares(){
 	let greenSq = ctx.rect(gpos, centH -10, 20, 20);
 	ctx.closePath();
 	ctx.fill();
-	rpos += 3*rstep;
-	gpos +=1.9*step;
+	rpos += 2.9*rstep;
+	gpos +=2*step;
 	}
 
 function ShowDiv(id){
 	if (!flag) {
 		document.getElementById(id).style.padding = "10px";
-	clearInterval(timer);
-	flag = true;
-	document.getElementById(id).innerHTML = centerBegining;
-	toTextNode("button cancel is pressed");
-	ShowLocal();
+		clearInterval(timer);
+		flag = true;
+		document.getElementById(id).innerHTML = centerBegining;
+		toTextNode("button cancel is pressed");
+		ShowLocal();
 	}
 }
 
